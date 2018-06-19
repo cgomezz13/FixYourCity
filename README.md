@@ -1,24 +1,14 @@
-# README
+# Fix Your City
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### *Built by the Mad Hackers for the [NYC Developer Week Hackathon](http://www.developerweek.com/NYC/hackathon/)*
+___
+## Fix Your City brings denizens of a city together with the infrastructure managers
+### Users can:
+* Report Infrastructure Problems they see in their daily lives
+* Add photographs and geotagging
+* Add descriptions
+* Comment on incidents other users have uploaded
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Managers can:
+* Rank infrastructure problems based on number of complaints and/or severity
+* Attach budgetary data to each issue
