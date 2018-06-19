@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :index, :show]
     resource :session, only: [:create, :destroy, :show]
     resources :incidents, only: [:index, :create, :update, :show]
-
+    
     post '/incidents/:incident_id/comments', to: "comments#create"
     destroy '/incidents/:incident_id/comments/:comment_id', to: "comments#destroy"
     get '/incidents/:incident_id/comments', to: "comments#index"
