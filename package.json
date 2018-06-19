@@ -43,5 +43,11 @@
   "bugs": {
     "url": "https://github.com/cgomezz13/FixYourCity/issues"
   },
-  "homepage": "https://github.com/cgomezz13/FixYourCity#readme"
+  "homepage": "https://github.com/cgomezz13/FixYourCity#readme",
+  "devDependencies": {
+    "redux-logger": "^3.0.6",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack-cli": "^3.0.8",
+    "webpack-merge": "^4.1.3"
+  }
 }
