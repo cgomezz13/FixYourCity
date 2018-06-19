@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :incidents, only: [:index, :create, :update, :show]
 
     post '/incidents/:incident_id/comments', to: "comments#create"
-    destroy '/incidents/:incident_id/comments/:comment_id', to: "comments#destroy"
+    delete '/incidents/:incident_id/comments/:comment_id', to: "comments#destroy"
     get '/incidents/:incident_id/comments', to: "comments#index"
   end
 
