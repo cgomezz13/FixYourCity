@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20180619142618) do
     t.string "password_digest", null: false
     t.integer "home_zipcode", null: false
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
