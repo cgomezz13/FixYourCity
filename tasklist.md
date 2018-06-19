@@ -1,6 +1,9 @@
 # ToDos
 | Task | Assigned | Completed |
-| User models | Cindy | |
-| AWS S3 | Chris | |
-| Logo image | Tiffany | |
-| | David | |
+| --- | --- | --- |
+| User models | Cindy | x |
+| AWS S3 | Chris | x |
+| Logo image | Tiffany |  |
+| Build Manager View | David |  |
+| Incident model | Joey | x |
+| Comment model | Chris | x |
