@@ -26,7 +26,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack --config webpack.prod.js --mode=production",
-    "webpack": "webpack --config webpack.dev.js --mode=development --watch",
+    "webpack": "webpack --config webpack.dev.js --mode=development",
     "watch": "webpack --config webpack.dev.js --mode=development --watch"
   },
   "repository": {
