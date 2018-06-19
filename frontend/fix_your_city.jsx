@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./pages/root";
-// import MapPage from './pages/map_page';
+// import MapPage from './components/map_page';
 import configureStore from "./store/store";
 
 import { login, logout, signUp } from "./util/session_api_util";
