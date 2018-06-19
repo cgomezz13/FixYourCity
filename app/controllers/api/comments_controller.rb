@@ -16,9 +16,9 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy
-        @comment = Incident.find(params[:id])
-        @comment.destroy!
-        render 'api/comments/show'
+      @comment = Incident.find(params[:incident_id].to_i).comments.find(params[:comment_id].to_i)
+      @comment.destroy!
+      render 'api/comments/show'
     end
 
     private
