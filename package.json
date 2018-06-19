@@ -24,7 +24,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack --config webpack.prod.js --mode=production",
+    "webpack": "webpack --config webpack.dev.js --mode=development --watch",
+    "watch": "webpack --config webpack.dev.js --mode=development --watch"
   },
   "repository": {
     "type": "git",
