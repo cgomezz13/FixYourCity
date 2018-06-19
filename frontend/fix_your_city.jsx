@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './pages/root';
+// import MapPage from './pages/map_page';
 import configureStore from './store/store';
 
 // import LoginForm from './pages/LoginForm';
@@ -19,4 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   ReactDOM.render(<Root />, document.getElementById('root'))
+  // ReactDOM.render(<MapPage />, document.getElementById('root'))
 });
