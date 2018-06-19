@@ -1,11 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Root from './pages/root';
+import React from "react";
+import ReactDOM from "react-dom";
+import Root from "./pages/root";
 // import MapPage from './pages/map_page';
-import configureStore from './store/store';
+import configureStore from "./store/store";
 
-
-// import { login, logout, signUp } from "./util/session_api_util";
+import { login, logout, signUp } from "./util/session_api_util";
+import {
+  createIncident,
+  updateIncident,
+  allIncidents
+} from "./util/incident_api_util";
+import { createComment, deleteComment } from "./util/comment_api_util";
 // import LoginForm from './pages/LoginForm';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -21,7 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  ReactDOM.render(<Root />, document.getElementById('root'))
-  // ReactDOM.render(<MapPage />, document.getElementById('root'))
 
+  // window.login = login;
+  // window.logout = logout;
+  // window.signUp = signUp;
+  // window.createIncident = createIncident;
+  // window.updateIncident = updateIncident;
+  // window.allIncidents = allIncidents;
+  // window.createComment = createComment;
+  // window.deleteComment = deleteComment;
+
+  ReactDOM.render(<Root />, document.getElementById("root"));
+  // ReactDOM.render(<MapPage />, document.getElementById('root'))
 });
