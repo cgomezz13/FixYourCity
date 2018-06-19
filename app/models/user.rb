@@ -40,7 +40,7 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
-  def self.ensure_session_token
+  def ensure_session_token
     self.session_token ||= User.generate_session_token
   end
 
