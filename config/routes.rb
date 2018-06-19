@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :index, :show]
     resource :session, only: [:create, :destroy, :show]
-    resources :incidents only: [:create, :update, :show]
+    resources :incidents only: [:create, :index, :update, :show]
 
     post '/incidents/:incident_id/comments' to: "comments#create"
     get '/incidents/:incident_id/comments' to: "comments#index"
