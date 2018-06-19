@@ -11,4 +11,5 @@ ___
 
 ### Managers can:
 * Rank infrastructure problems based on number of complaints and/or severity
+* Rank infrastructure problems based on number of attractions in close proximity
 * Attach budgetary data to each issue
