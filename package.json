@@ -1,5 +1,32 @@
 {
-  "name": "FixCity",
+  "name": "fix-your-city",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "webpack": "^4.12.0"
+  },
+  "description": "### *Built by the Mad Hackers for the [NYC Developer Week Hackathon](http://www.developerweek.com/NYC/hackathon/)* ___ ## Fix Your City brings denizens of a city together with the infrastructure managers ### Users can: * Report Infrastructure Problems they see in their daily lives * Add photographs and geotagging * Add descriptions * Comment on incidents other users have uploaded",
+  "version": "1.0.0",
+  "main": "webpack.common.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgomezz13/FixYourCity.git"
+  },
+  "keywords": [
+    "infrastructure",
+    "tomtom",
+    "mad-hackers"
+  ],
+  "author": "The Mad Hackers of NYC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgomezz13/FixYourCity/issues"
+  },
+  "homepage": "https://github.com/cgomezz13/FixYourCity#readme"
 }
