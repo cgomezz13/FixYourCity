@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       login(@user)
     else
       error = @user.errors.full_messages
-    end 
+    end
   end
 
   private
