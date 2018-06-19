@@ -10,6 +10,11 @@ class Api::IncidentsController < ApplicationController
     end
   end
 
+  def index
+    @incidents = Incident.where(location: incident_params[:location])
+    render 'api/incidents/index'
+  end
+
   def update
     @incident = Incident.find(params[:id])
     if @incident.update(incident_params)
