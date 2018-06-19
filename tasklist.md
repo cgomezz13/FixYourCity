@@ -4,4 +4,4 @@
 | User models | Cindy |  |
 | AWS S3 | Chris |  |
 | Logo image | Tiffany |  |
-|  | David |  |
+| Build Manager View | David |  |
