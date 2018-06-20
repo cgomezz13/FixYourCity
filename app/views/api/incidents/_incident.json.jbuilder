@@ -1,1 +1,1 @@
-json.extract! incident, :name, :location, :description
+json.extract! incident, :name, :lat, :lon, :description
