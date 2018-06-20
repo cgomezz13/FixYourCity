@@ -1,8 +1,8 @@
-export const createIncident = incidentInfo => {
+export const createIncident = incident => {
   return $.ajax({
     method: "POST",
     url: "/api/incidents",
-    data: { incident: incidentInfo }
+    data: incident
   });
 };
 
@@ -13,11 +13,11 @@ export const getIncident = incidentId => {
   })
 }
 
-export const updateIncident = incidentInfo => {
+export const updateIncident = incident => {
   return $.ajax({
     method: "PATCH",
     url: `/api/incidents/${incidentInfo.id}`,
-    data: { incident: incidentInfo }
+    data: incident
   });
 };
 
