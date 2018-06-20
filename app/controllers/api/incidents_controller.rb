@@ -32,7 +32,7 @@ class Api::IncidentsController < ApplicationController
 
   private
   def incident_params
-    params.require(:incident).permit(:name, :location, :description)
+    params.require(:incident).permit(:name, :location, :description, :photo)
   end
 
 end
