@@ -9,9 +9,9 @@ export default class NewIncidentForm extends Component {
         name: '',
         location: '',
         description: '',
-        photo: null,
-        img_url: null
-      }
+        photo: null
+      },
+      img_url: null
     }
     this.submitIncident = this.submitIncident.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
@@ -35,11 +35,18 @@ export default class NewIncidentForm extends Component {
 
   submitIncident(e) {
     e.preventDefault();
-    const newIncident = Object.assign({}, this.state.newIncident)
-    if (newIncident.photo === null) {
-      delete newIncident.photo;
+    let formData = new FormData();
+    if (this.state.newIncident.photo) {
+      formData.append('incident[photo]', this.state.newIncident.photo)
     }
-    this.props.createIncident({incident: newIncident})
+    formData.append('incident[name]', this.state.newIncident.name);
+    formData.append('incident[location]', this.state.newIncident.location);
+    formData.append('incident[description]', this.state.newIncident.description);
+    // // const newIncident = Object.assign({}, this.state.newIncident)
+    // if (newIncident.photo === null) {
+    //   delete newIncident.photo;
+    // }
+    this.props.createIncident(formData)
       .then(null, (err) => {
         this.setState({
           errors: err.responseText
@@ -68,9 +75,12 @@ export default class NewIncidentForm extends Component {
   updatePhoto(e) {
     const photo = e.currentTarget.files[0];
     const fileReader = new FileReader();
+    const newIncident = Object.assign({}, this.state.newIncident)
+    newIncident.photo = photo
+
     fileReader.onloadend = () => {
       this.setState({
-        photo: photo,
+        newIncident: newIncident,
         img_url: fileReader.result
       })
     }
