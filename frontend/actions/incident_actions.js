@@ -15,7 +15,7 @@ export const receiveIncident = incident => {
         type RECEIVE_INCIDENT,
         incident
     }
-}
+};
 
 export const createIncident = incident => dispatch => (
     APIUtil.createIncident(incident).then(payload => (
@@ -32,11 +32,11 @@ export const updateIncident = incident => dispatch => (
 export const fetchIncident = incidentId => dispatch => (
     APIUtil.getIncident(incidentId).then(payload => (
         dispatch(receiveIncident(payload))
-    )
-));
+    ))
+);
 
-export const fetchIncidents = () => dispatch => (
-    APIUtil.allIncidents().then(payload => (
+export const fetchIncidents = (incidents) => dispatch => (
+    APIUtil.allIncidents(incidents).then(payload => (
         dispatch(receiveIncidents(payload))
-    )
-));
+    ))
+);

@@ -21,9 +21,10 @@ export const updateIncident = incidentInfo => {
   });
 };
 
-export const allIncidents = () => {
+export const allIncidents = incidents => {
   return $.ajax({
     method: "GET",
-    url: "/api/incidents"
+    url: "/api/incidents",
+    data: incidents
   });
 };
