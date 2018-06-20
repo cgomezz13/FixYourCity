@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import {
     RECEIVE_INCIDENTS,
-    RECIEVE_INCIDENT
+    RECEIVE_INCIDENT
 } from '../actions/incident_actions';
 
 const incidentsReducer = (state = {}, action) => {
