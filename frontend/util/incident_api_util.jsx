@@ -6,6 +6,13 @@ export const createIncident = incidentInfo => {
   });
 };
 
+export const getIncident = incidentId => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/incidents/${incidentId}`
+  })
+}
+
 export const updateIncident = incidentInfo => {
   return $.ajax({
     method: "PATCH",
