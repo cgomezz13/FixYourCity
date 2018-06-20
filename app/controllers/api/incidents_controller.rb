@@ -11,7 +11,7 @@ class Api::IncidentsController < ApplicationController
   end
 
   def index
-    @incidents = Incident.where(location: params[:location])
+    @incidents = Incident.all #.where(location: params[:location])
     render 'api/incidents/index'
   end
 
