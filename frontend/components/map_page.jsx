@@ -52,8 +52,7 @@ export default class MapPage extends Component {
       }
     });
     map.addControl(new FindLocationControl());
-    window.flc = new FindLocationControl();
-    window.map = map;
+    document.querySelector('div.icon-locate_me_btn').click()
   }
 
   render () {
