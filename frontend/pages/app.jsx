@@ -6,12 +6,9 @@ import LoginForm from "./session/LoginForm";
 
 import NewIncidentForm from "../components/new_incident_form_container";
 
+import HomeContainer from "./home_container";
+
 const App = props => {
-=======
-import HomeContainer from './home_container';
-
-const App = (props) => {
-
   return (
     <div className="appContainer">
       <Switch>
