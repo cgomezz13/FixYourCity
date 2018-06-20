@@ -7,13 +7,8 @@ export default class MapPage extends Component {
 
   componentDidMount() {
     tomtom.setProductInfo('fix-your-city', '4.29.0');
-    // tomtom.L.map('map', {
-    //     key: 'ZzhLoHMvN7NYtV6UorNZ3BAWwGDSgbfh'
-    // });
     const map = tomtom.L.map('map', {
       key: 'ZzhLoHMvN7NYtV6UorNZ3BAWwGDSgbfh'
-      // source: 'vector',
-      // basePath: '../../jsskd-4.29.0-distribution'
     });
     const FindLocationControl = tomtom.L.Control.extend({
     onAdd: function(map) {
@@ -57,7 +52,8 @@ export default class MapPage extends Component {
       }
     });
     map.addControl(new FindLocationControl());
-
+    window.flc = new FindLocationControl();
+    window.map = map;
   }
 
   render () {
@@ -65,7 +61,7 @@ export default class MapPage extends Component {
       <div
         id="map"
         className="use-all-space"
-        style={{height: 260}}
+        style={{height: 260, width: '90%'}}
         >
       </div>
     )
