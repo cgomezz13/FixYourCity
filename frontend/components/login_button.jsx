@@ -11,7 +11,6 @@ export default class LoginButton extends Component {
 
   submitLogin(e) {
     e.preventDefault();
-    debugger;
     this.props
       .login({
         username: "demo_user",
