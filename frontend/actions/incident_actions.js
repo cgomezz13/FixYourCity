@@ -17,11 +17,12 @@ export const receiveIncident = incident => {
     }
 };
 
-export const createIncident = incident => dispatch => (
+export const createIncident = incident => dispatch => {
+  return (
     APIUtil.createIncident(incident).then(payload => (
         dispatch(receiveIncident(payload))
     ))
-);
+)};
 
 export const updateIncident = incident => dispatch => (
     APIUtil.updateIncident(incident).then(payload => (
