@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import LoginButton from "../login_button_container";
+
 export default class LoginForm extends Component {
   constructor() {
     super();
