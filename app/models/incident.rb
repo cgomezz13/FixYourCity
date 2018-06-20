@@ -1,5 +1,5 @@
 class Incident < ApplicationRecord
-  validates :name, :location, presence: true, uniqueness: true
+  validates :name, :lat, :lon, presence: true, uniqueness: true
   validates :description, presence: true
 
   has_attached_file :photo

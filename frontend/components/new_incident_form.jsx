@@ -7,7 +7,8 @@ export default class NewIncidentForm extends Component {
       errors: null,
       newIncident: {
         name: '',
-        location: '',
+        lat: 0.0,
+        lon: 0.0,
         description: '',
         photo: null
       },
@@ -24,9 +25,8 @@ export default class NewIncidentForm extends Component {
     navigator.geolocation.getCurrentPosition((pos) => {
       const newIncident = Object.assign({}, this.state.newIncident)
       const position = pos;
-      const lat = position.coords.latitude;
-      const lon = position.coords.longitude;
-      newIncident.location = {lat: lat, lon: lon};
+      newIncident.lat = position.coords.latitude;
+      newIncident.lon = position.coords.longitude;
       this.setState({
         newIncident: newIncident
       })
@@ -40,7 +40,8 @@ export default class NewIncidentForm extends Component {
       formData.append('incident[photo]', this.state.newIncident.photo)
     }
     formData.append('incident[name]', this.state.newIncident.name);
-    formData.append('incident[location]', this.state.newIncident.location);
+    formData.append('incident[lat]', this.state.newIncident.lat);
+    formData.append('incident[lon]', this.state.newIncident.lon);
     formData.append('incident[description]', this.state.newIncident.description);
     // // const newIncident = Object.assign({}, this.state.newIncident)
     // if (newIncident.photo === null) {
