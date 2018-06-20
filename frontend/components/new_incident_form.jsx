@@ -6,7 +6,7 @@ export default class NewIncidentForm extends Component {
     this.state = {
       newIncident: {
         name: '',
-        location: '',
+        location: 'default location',
         description: '',
         photo: null,
         img_url: null
@@ -14,8 +14,10 @@ export default class NewIncidentForm extends Component {
     }
     this.submitIncident = this.submitIncident.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
+    // this.updateField = this.updateField.bind(this);
     this.updateLocation = this.updateLocation.bind(this);
     this.updateName = this.updateName.bind(this);
+    this.updatePhoto = this.updatePhoto.bind(this);
   }
 
   submitIncident(e) {
@@ -28,21 +30,21 @@ export default class NewIncidentForm extends Component {
   }
 
   updateField(field, value) {
-    const newState = Object.assign({}, this.state);
+    const newState = Object.assign({}, this.state.newIncident);
     newState[field] = value
-    this.setState(newState)
+    this.setState({newIncident: newState})
   }
 
   updateDescription(e) {
-    updateField('description', e.target.value);
+    this.updateField('description', e.target.value);
   }
 
   updateLocation(e) {
-    updateField('location', e.target.value);
+    this.updateField('location', e.target.value);
   }
 
   updateName(e) {
-    updateField('name', e.target.value);
+    this.updateField('name', e.target.value);
   }
 
   updatePhoto(e) {
@@ -60,42 +62,46 @@ export default class NewIncidentForm extends Component {
   }
 
   render() {
-    <form className="new-incident-form" onSubmit={this.submitIncident}>
-      <label>Post Title
-        <input
-          type="text"
-          placeholder="please input a descriptive title"
-          onChange={this.updateName}
-          value={this.state.name}
-          />
-      </label>
-      <label>Description
-        <textarea
-          placeholder="please input a concise description of the incident"
-          value={this.state.description}
-          onChange={this.updateDescription}
-          />
-      </label>
-      <label>Take Photo
-        <input
-          type="file"
-          accept="image/*"
-          capture="environment"
-          onChange={this.uploadPhoto}
-          />
-      </label>
-      <label>Upload Photo
-        <input
-          type="file"
-          accept="image/*"
-          />
-      </label>
-      {
-        this.state.img_url && (
-          <img src={this.state.img_url} className="image-preview" />
-        )
-      }
-      <input type="submit" value="Submit Incident" />
-    </form>
+    return (
+      <form className="new-incident-form" onSubmit={this.submitIncident}>
+        <h1>New Incident Form</h1>
+          <label>Post Title<br />
+          <input
+            type="text"
+            placeholder="give a descriptive title"
+            onChange={this.updateName}
+            value={this.state.name}
+            />
+        </label><br />
+        <label>Description<br/>
+          <textarea
+            placeholder="give a concise description"
+            onChange={this.updateDescription}
+            value={this.state.description}
+            />
+        </label><br />
+        <label>Take Photo<br />
+          <input
+            type="file"
+            accept="image/*"
+            capture="environment"
+            onChange={this.updatePhoto}
+            />
+        </label><br />
+        <label>Upload Photo<br />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={this.updatePhoto}
+            />
+        </label><br />
+        {
+          this.state.img_url && (
+            <img src={this.state.img_url} className="image-preview" />
+          )
+        }
+        <input type="submit" value="Submit Incident" />
+      </form>
+    )
   }
 }
