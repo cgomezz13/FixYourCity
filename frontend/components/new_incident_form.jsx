@@ -4,6 +4,7 @@ export default class NewIncidentForm extends Component {
   constructor() {
     super()
     this.state = {
+      errors: null,
       newIncident: {
         name: '',
         location: 'default location',
@@ -14,7 +15,6 @@ export default class NewIncidentForm extends Component {
     }
     this.submitIncident = this.submitIncident.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
-    // this.updateField = this.updateField.bind(this);
     this.updateLocation = this.updateLocation.bind(this);
     this.updateName = this.updateName.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
@@ -27,6 +27,11 @@ export default class NewIncidentForm extends Component {
       delete newIncident.photo;
     }
     this.props.createIncident({incident: newIncident})
+      .then(null, (err) => {
+        this.setState({
+          errors: err.responseText
+        })
+      })
   }
 
   updateField(field, value) {
@@ -65,6 +70,9 @@ export default class NewIncidentForm extends Component {
     return (
       <form className="new-incident-form" onSubmit={this.submitIncident}>
         <h1>New Incident Form</h1>
+        { this.state.errors && (
+          <h2 style={{color: '#f00'}}>{this.state.errors}</h2>
+        )}
           <label>Post Title<br />
           <input
             type="text"
