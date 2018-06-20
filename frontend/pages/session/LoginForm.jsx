@@ -1,42 +1,51 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+
+import LoginButton from "../../components/login_button_container";
 
 export default class LoginForm extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      username: '',
-      password: ''
-    }
+      username: "",
+      password: ""
+    };
 
-    this.submitLogin = this.submitLogin.bind(this)
-    this.updateName = this.updateName.bind(this)
-    this.updatePW = this.updatePW.bind(this)
+    this.submitLogin = this.submitLogin.bind(this);
+    this.updateName = this.updateName.bind(this);
+    this.updatePW = this.updatePW.bind(this);
   }
 
-  submitLogin (e) {
-    e.preventDefault()
-    console.log('submitting login (not really)')
+  submitLogin(e) {
+    e.preventDefault();
+    console.log("submitting login (not really)");
   }
 
-  updateName (e) {
+  updateName(e) {
     this.setState({
       username: e.target.value
-    })
+    });
   }
 
-  updatePW (e) {
+  updatePW(e) {
     this.setState({
       password: e.target.value
-    })
+    });
   }
 
-  render () {
+  render() {
     return (
-      <form className="login" onSubmit={this.submitLogin}>
-        <input type="text" className="username" onChange={this.updateName} />
-        <input type="password" className="password" onChange={this.updatePW} />
-        <input type="submit" className="submit-button" />
-      </form>
-    )
+      <div>
+        <form className="login" onSubmit={this.submitLogin}>
+          <input type="text" className="username" onChange={this.updateName} />
+          <input
+            type="password"
+            className="password"
+            onChange={this.updatePW}
+          />
+          <input type="submit" className="submit-button" />
+        </form>
+        <LoginButton history={this.props.history} />
+      </div>
+    );
   }
 }
