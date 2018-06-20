@@ -1,16 +1,16 @@
-import { connect } for 'react-redux';
-import IncidentIndex from './incidents_index';
+import { connect } from 'react-redux';
+import IncidentIndex from './incident_index';
 import { fetchIncidents } from '../../actions/incident_actions';
 
 const mSp = state => {
     return {
-        incidents: Object.values(this.state.incidents)
+        incidents: Object.values(state.incidents)
     };
 };
 
 const mDp = dispatch => {
     return {
-        fetchIncidents: (incidents) => dispatch(fetchIncidents(incidents))
+        fetchIncidents: () => dispatch(fetchIncidents())
     };
 };
 

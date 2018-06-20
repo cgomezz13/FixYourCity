@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
+import IncidentIndex from './incidents/incident_index_container';
 
 export default class MapPage extends Component {
   constructor() {
     super()
+    this.state = {
+      map: null
+    }
   }
 
   componentDidMount() {
@@ -52,17 +56,23 @@ export default class MapPage extends Component {
       }
     });
     map.addControl(new FindLocationControl());
+    this.setState({
+      map: map
+    })
     document.querySelector('div.icon-locate_me_btn').click()
   }
 
   render () {
     return (
-      <div
-        id="map"
-        className="use-all-space"
-        style={{height: 260, width: '100%'}}
-        >
-      </div>
+      <section>
+        <div
+          id="map"
+          className="use-all-space"
+          style={{height: 260, width: '100%'}}
+          >
+          </div>
+          <IncidentIndex map={this.state.map}/>
+      </section>
     )
   }
 }
