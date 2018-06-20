@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class LogoutButton extends Component {
   constructor(props) {
@@ -7,25 +8,15 @@ export default class LogoutButton extends Component {
     this.state = {
       errors: null
     };
-
-    this.submitLogout = this.submitLogout.bind(this);
-  }
-
-  submitLogout(e) {
-    e.preventDefault();
-    this.props.logout().then(null, err => {
-      this.setState({
-        errors: err.resposeText
-      });
-    });
   }
 
   render() {
     return (
-      <form className="logout-button" onSubmit={this.submitLogout}>
-        {this.state.errors && <h2>{this.state.errors}</h2>}
-        <button value="Logout">Logout</button>
-      </form>
+      <div>
+        <button>
+          <Link to="/login">Logout</Link>
+        </button>
+      </div>
     );
   }
 }
