@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const LoginButton = (props) => (
-  <form className="login-button">
-    <button
-      onClick={() => {props.login({user: {username: 'demo_user', password: 'starwars'}})}}
-      value="Demo User"
-    />
-  </form>
-)
+export default class LoginButton extends Component {
+  constructor(props) {
+    super(props)
+    this.submitLogin = this.submitLogin.bind(this);
+  }
 
-export default LoginButton;
+  submitLogin (e) {
+    this.props.login({
+      user: {
+        username: 'demo_user',
+        password: 'starwars'
+      }
+    })
+  }
+
+  render () {
+    return (
+      <form
+        className="login-button"
+        onSubmit={this.submitLogin}
+        >
+        <button
+          value="Demo User"
+          >
+          Demo User
+        </button>
+      </form>
+    )
+  }
+}
