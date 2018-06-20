@@ -8,3 +8,4 @@
 | Incident model | Joey | x |
 | Comment model | Chris | x |
 | Api::Session controller | Cindy |  |
+| Login demo user button | Chris | |
