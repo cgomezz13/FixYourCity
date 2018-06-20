@@ -10,7 +10,7 @@ export default class MapPage extends Component {
     // tomtom.L.map('map', {
     //     key: 'ZzhLoHMvN7NYtV6UorNZ3BAWwGDSgbfh'
     // });
-    var map = tomtom.L.map('map', {
+    const map = tomtom.L.map('map', {
       key: 'ZzhLoHMvN7NYtV6UorNZ3BAWwGDSgbfh'
       // source: 'vector',
       // basePath: '../../jsskd-4.29.0-distribution'
@@ -49,14 +49,14 @@ export default class MapPage extends Component {
                 opacity: 1
             })
         }).addTo(this._map);
-    },
-    showLocationErrorMessage: function() {
-        tomtom.messageBox({closeAfter: 3000})
-            .setContent('Could not find your location')
-            .openOn(this._map);
-    }
-});
-map.addControl(new FindLocationControl());
+      },
+      showLocationErrorMessage: function() {
+          tomtom.messageBox({closeAfter: 3000})
+              .setContent('Could not find your location')
+              .openOn(this._map);
+      }
+    });
+    map.addControl(new FindLocationControl());
 
   }
 
