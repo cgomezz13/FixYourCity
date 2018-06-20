@@ -61,7 +61,7 @@ export default class MapPage extends Component {
       <div
         id="map"
         className="use-all-space"
-        style={{height: 260, width: '90%'}}
+        style={{height: 260, width: '100%'}}
         >
       </div>
     )

@@ -7,7 +7,7 @@ export default class NewIncidentForm extends Component {
       errors: null,
       newIncident: {
         name: '',
-        location: 'default location',
+        location: '',
         description: '',
         photo: null,
         img_url: null
@@ -18,6 +18,19 @@ export default class NewIncidentForm extends Component {
     this.updateLocation = this.updateLocation.bind(this);
     this.updateName = this.updateName.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((pos) => {
+      const newIncident = Object.assign({}, this.state.newIncident)
+      const position = pos;
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      newIncident.location = {lat: lat, lon: lon};
+      this.setState({
+        newIncident: newIncident
+      })
+    })
   }
 
   submitIncident(e) {
