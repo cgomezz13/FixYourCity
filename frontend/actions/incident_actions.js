@@ -12,7 +12,7 @@ export const receiveIncidents = incidents => {
 
 export const receiveIncident = incident => {
     return {
-        type RECEIVE_INCIDENT,
+        type: RECEIVE_INCIDENT,
         incident
     }
 };

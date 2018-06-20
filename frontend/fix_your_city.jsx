@@ -36,6 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.createComment = createComment;
   // window.deleteComment = deleteComment;
 
-  ReactDOM.render(<Root />, document.getElementById("root"));
+  ReactDOM.render(<Root store={store} />, document.getElementById("root"));
   // ReactDOM.render(<MapPage />, document.getElementById('root'))
 });
