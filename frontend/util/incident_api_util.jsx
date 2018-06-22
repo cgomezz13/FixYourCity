@@ -1,8 +1,10 @@
 export const createIncident = incident => {
   return $.ajax({
-    method: "POST",
+    method: "post",
+    data: incident,
     url: "/api/incidents",
-    data: incident
+    processData: false,
+    contentType: false
   });
 };
 
@@ -21,10 +23,9 @@ export const updateIncident = incident => {
   });
 };
 
-export const allIncidents = incidents => {
+export const allIncidents = () => {
   return $.ajax({
     method: "GET",
-    url: "/api/incidents",
-    data: incidents
+    url: "/api/incidents"
   });
 };

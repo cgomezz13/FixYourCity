@@ -17,11 +17,12 @@ export const receiveIncident = incident => {
     }
 };
 
-export const createIncident = incident => dispatch => (
+export const createIncident = incident => dispatch => {
+  return (
     APIUtil.createIncident(incident).then(payload => (
         dispatch(receiveIncident(payload))
     ))
-);
+)};
 
 export const updateIncident = incident => dispatch => (
     APIUtil.updateIncident(incident).then(payload => (
@@ -35,8 +36,8 @@ export const fetchIncident = incidentId => dispatch => (
     ))
 );
 
-export const fetchIncidents = (incidents) => dispatch => (
-    APIUtil.allIncidents(incidents).then(payload => (
+export const fetchIncidents = () => dispatch => (
+    APIUtil.allIncidents().then(payload => (
         dispatch(receiveIncidents(payload))
     ))
 );

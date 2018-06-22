@@ -13,9 +13,14 @@
  *= require_tree .
  *= require_self
  */
- 
+
 .icon-locate_me_btn {
   cursor: pointer;
   width: 34px;
   height: 34px;
+}
+
+svg {
+  height: 30px;
+  width: 30px;
 }
