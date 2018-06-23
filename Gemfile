@@ -28,10 +28,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
-gem 'paperclip'
+gem 'paperclip', '~> 5.0.0'
 gem 'figaro'
-gem 'aws-sdk', '< 3.0'
-gem 'aws-sdk-s3'
+gem 'aws-sdk', '~> 3.0'
 
 gem 'turbolinks'
 
