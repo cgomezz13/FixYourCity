@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'figaro'
 gem 'aws-sdk', '< 3.0'
+gem 'aws-sdk-s3'
 
 gem 'turbolinks'
 
