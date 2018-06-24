@@ -1,2 +1,2 @@
 json.extract! incident, :name, :lat, :lon, :description
-json.photo incident.photo.url
+json.photo incident.photo.service_url
