@@ -1,8 +1,9 @@
 class Comment < ApplicationRecord
   validates :body, :title, presence: true
 
-  has_attached_file :image
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  # has_attached_file :image
+  has_one_attached :image
+  validates_acceptance_of :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :user,
     class_name: 'User',
