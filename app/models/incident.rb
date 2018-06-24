@@ -2,8 +2,10 @@ class Incident < ApplicationRecord
   validates :name, :lat, :lon, presence: true, uniqueness: true
   validates :description, presence: true
 
-  has_attached_file :photo
-  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
+  # has_attached_file :photo
+  has_one_attached :photo
+  # validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
+  # validates_acceptance_of :photo, content_type: /\Aimage\/.*\z/
 
   has_many :comments,
     class_name: 'Comment',
